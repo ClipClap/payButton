@@ -222,12 +222,10 @@ Puedes implementar cuántas veces quieras el botón de pago en tu página web. P
               }]
             },
             "#total":{
-            "{
               'netValue': '13000',
               'taxValue': '1000',
               'tipValue': '500',
               'description': 'Combo 1. Hambuerguesa, Perro y Gaseosa'
-            }"
           }
           };
           (function() {
