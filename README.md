@@ -25,7 +25,7 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
 a) *Forma 'producto por producto':* Esta opción permite agregar al cobro productos de forma individual especificando su nombre, precio , cantidad y el impuesto que debe llevar el producto.
 
 b) *Forma 'total-impuesto-propina':* Esta opción permite definir el total a cobrar de forma inmediata especificando el total a cobrar, el impuesto a cobrar y de forma opcional la propina.
-> ***Nota:*** Estas dos formas de crear el cobro son mutuamente excluyentes. Si usted utiliza ambas formas al mismo tiempo, la *forma 'total-impuesto'* prevalece sobre la *forma 'producto-por-producto'*.
+> ***Nota:*** Estas dos formas de crear el cobro son mutuamente excluyentes. Si usted utiliza ambas formas al mismo tiempo, la *forma 'total-impuesto-propina'* prevalece sobre la *forma 'producto-por-producto'*.
 
 ## Integración ##
 
@@ -80,7 +80,7 @@ Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos 
 
   Listo!!! ya tu negocio está listo para recibir dinero desde tu página web.
 
-  Recuerda que debes colocar tu WEB Key en "YOUR WEB KEY" y puedes elegir el color del botón de pago entre blanco, azul y negro colocando white, blue o black donde dice "YOUR THEME".
+  Recuerda que debes reemplazar tu WEB Key en "YOUR WEB KEY" y puedes elegir el color del botón de pago entre blanco, azul y negro reemplazando white, blue o black donde dice "YOUR THEME" (por defecto es azul).
   Observa que hemos utilizado el id "botonClipClap", tu puedes colocar el que gustes, siempre y cuando el atributo id de la etiqueta `<button>` tenga el mismo nombre.
 
   > ***Nota:*** Es importante que mantengas la estructura donde dice _$clipclap._Buttons, es un formato muy específico llamado JSON *.
@@ -119,7 +119,7 @@ Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos 
           })();
         </script>
 
-Todo lo anterior tambien puedes Hacerlo de otra forma. Utiliza la que más te guste:
+Todo lo anterior también puedes Hacerlo de otra forma. Utiliza la que más te guste:
 
 *Forma 'producto por producto':*
 ``` html
@@ -141,7 +141,6 @@ Todo lo anterior tambien puedes Hacerlo de otra forma. Utiliza la que más te gu
                 'taxId': '4'
               }]
             }" ></button>
-      </div>
         <script type="text/javascript">
           var _$clipclap = _$clipclap || {};
           _$clipclap._setKey = 'YOUR WEB KEY';
@@ -163,7 +162,6 @@ Todo lo anterior tambien puedes Hacerlo de otra forma. Utiliza la que más te gu
               'tipValue': '500',
               'description': 'Combo 1. Hambuerguesa, Perro y Gaseosa'
             }" ></button>
-      </div>
         <script type="text/javascript">
           var _$clipclap = _$clipclap || {};
           _$clipclap._setKey = 'YOUR WEB KEY';
@@ -181,16 +179,11 @@ Observa que esta vez, hemos llamado al botón por el id test
 
 ## Avanzado ##
 
-Puedes implementar cuantas veces quieras el botón de pago en tu página web y combinar las formas. Por ejemplo si quieres que tu pagína web tenga dos botones. Uno para enviar producto por producto, y uno para cobrar el combo completo, lo puedes hacer así:
+Puedes implementar cuántas veces quieras el botón de pago en tu página web. Por ejemplo si quieres que tu pagína web tenga dos botones. Uno para enviar producto por producto, y uno para cobrar el combo completo, lo puedes hacer así:
 
 ``` html
         <button class="productos"></button>
-        <button id="total" data-clipclap="{
-              'netValue': '13000',
-              'taxValue': '1000',
-              'tipValue': '500',
-              'description': 'Combo 1. Hambuerguesa, Perro y Gaseosa'
-            }" ></button>
+        <button id="total"></button>
       </div>
         <script type="text/javascript">
           var _$clipclap = _$clipclap || {};
@@ -215,7 +208,15 @@ Puedes implementar cuantas veces quieras el botón de pago en tu página web y c
                 'itemValue': '2000',
                 'taxId': '4'
               }]
-            }
+            },
+            "#total":{
+            "{
+              'netValue': '13000',
+              'taxValue': '1000',
+              'tipValue': '500',
+              'description': 'Combo 1. Hambuerguesa, Perro y Gaseosa'
+            }"
+          }
           };
           (function() {
             var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
