@@ -5,7 +5,7 @@ ClipClap te permite incorporar la acción de pagar en tu página web de forma f�
 ## Prerrequisitos ##
 
  1. ***Tener una cuenta ClipClap Datáfono:***
-Para poder realizar la integración con ClipClap debes primero tener una cuenta en ClipClap Datáfono, puedes hacer el proceso de registro siguiendo este [link](https://clipclap.co/datafono/dashboard/php/views/login.php){:target="_blank"} o desde la misma aplicación ClipClap Datáfono.
+Si no tienes una cuenta en ClipClap Datáfono, puedes hacer el proceso de registro siguiendo este [link](https://clipclap.co/datafono/dashboard/php/views/login.php){:target="_blank"} o desde la misma aplicación ClipClap Datáfono.
 
  2. ***Tener el webKey de tu negocio:***
 Una vez tengas tu usuario Datáfono, tendrás que tener a la mano el “webKey” de tu negocio, puedes consultar los pasos para adquirirlos en detalle [aquí](https://clipclap.co/datafono/dashboard/php/views/settings.php){:target="_blank"}.
@@ -122,6 +122,9 @@ Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos 
 Todo lo anterior también puedes Hacerlo de otra forma. Utiliza la que más te guste:
 
 *Forma 'producto por producto':*
+
+Establece los datos como atributo html
+
 ``` html
         <button id="test" data-clipclap="{
               'details': [{
@@ -141,6 +144,9 @@ Todo lo anterior también puedes Hacerlo de otra forma. Utiliza la que más te g
                 'taxId': '4'
               }]
             }" ></button>
+```
+Coloca esto al final, reemplazando "YOUR WEB KEY" y "YOUR THEME"
+
         <script type="text/javascript">
           var _$clipclap = _$clipclap || {};
           _$clipclap._setKey = 'YOUR WEB KEY';
@@ -152,9 +158,12 @@ Todo lo anterior también puedes Hacerlo de otra forma. Utiliza la que más te g
           })();
         </script>
     </body>
-```
+
 
 *Forma 'total-impuesto-propina':*
+
+Establece los datos como atributo html
+
 ``` html
         <button id="test" data-clipclap="{
               'netValue': '13000',
@@ -162,6 +171,10 @@ Todo lo anterior también puedes Hacerlo de otra forma. Utiliza la que más te g
               'tipValue': '500',
               'description': 'Combo 1. Hambuerguesa, Perro y Gaseosa'
             }" ></button>
+```
+
+Coloca esto al final, reemplazando "YOUR WEB KEY" y "YOUR THEME"
+
         <script type="text/javascript">
           var _$clipclap = _$clipclap || {};
           _$clipclap._setKey = 'YOUR WEB KEY';
@@ -173,7 +186,7 @@ Todo lo anterior también puedes Hacerlo de otra forma. Utiliza la que más te g
           })();
         </script>
     </body>
-```
+
 
 Observa que esta vez, hemos llamado al botón por el id test
 
@@ -184,7 +197,6 @@ Puedes implementar cuántas veces quieras el botón de pago en tu página web. P
 ``` html
         <button class="productos"></button>
         <button id="total"></button>
-      </div>
         <script type="text/javascript">
           var _$clipclap = _$clipclap || {};
           _$clipclap._setKey = 'YOUR WEB KEY';
