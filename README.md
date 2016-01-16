@@ -33,19 +33,10 @@ Implementar el botón de pago es muy fácil. Te garantizamos que después de lee
 **Paso 1: Lo primero que debes hacer es crear una etiqueta button html y darle un identificador único, ya sea mediante el atributo id o el atributo class.
 El siguiente es un ejemplo de una eqitueta button con un id que llamaremos 'botonClipClap'
 
+``` html
+    <button id="botonClipClap"></button>
+```
 
-
-        <script type="text/javascript">
-          var _$clipclap = _$clipclap || {};
-          _$clipclap._setKey = 'AQUI_TU_WEB_KEY';
-            /////AQUI TU LOGICA///////
-          (function() {
-            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
-            cc.src = './js/paybutton.min.js';
-            //cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
-          })();
-        </script>
 
 Listo!, ves que fácil. Ya estás a la mitad de implementar el botón.
 
