@@ -22,7 +22,8 @@ Recuerda que puedes cambiar entre entorno de prueba y de producción, para lleva
  6. ***Formas de enviar información:***
 Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
 
-a) *Forma 'producto por producto':* Esta opción permite agregar al cobro productos de forma individual especificando su nombre, precio y cantidad del producto.
+a) *Forma 'producto por producto':* Esta opción permite agregar al cobro productos de forma individual especificando su nombre, precio , cantidad y el impuesto que debe llevar el producto.
+
 b) *Forma 'total-impuesto-propina':* Esta opción permite definir el total a cobrar de forma inmediata especificando el total a cobrar sin impuestos, el impuesto sobre el total y de forma opcional la propina.
 > ***Nota:*** Estas dos formas de crear el cobro son mutuamente excluyentes. Si usted utiliza ambas formas al mismo tiempo, la *forma 'total-impuesto'* prevalece sobre la *forma 'producto-por-producto'*.
 
@@ -42,7 +43,44 @@ Listo!, ves que fácil. Ya estás a la mitad de implementar el botón.
 
 **Paso 2: Configurar el cobro.**
 
-Ahora lo que necesitas es agregar los datos para construir el cobro, tienes dos formas de hacerlo.
+Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos que tu negocio vende productos de alimentos y quieres cobrar una hamburguesa por el costo de $8000, un perro caliente por el costo de $4000 y dos gaseosas por el costo de $2000 cada una. Agregarías los datos así:
+
+        <script type="text/javascript">
+          var _$clipclap = _$clipclap || {};
+          _$clipclap._setKey = 'YOUR WEB KEY';
+          _$clipclap._themeButton = "YOUR THEME";
+          _$clipclap._Buttons = {
+            "#botonClipClap":{
+              "details": [{
+                "itemCount": "1",
+                "itemName": "Hamburguesa",
+                "itemValue": "8000",
+                "taxId": "4"
+              }, {
+                "itemCount": "1",
+                "itemName": "Perro Caliente",
+                "itemValue": "4000",
+                "taxId": "4"
+              }, {
+                "itemCount": "2",
+                "itemName": "Gaseosa",
+                "itemValue": "2000",
+                "taxId": "4"
+              }]
+            }
+          };
+          (function() {
+            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
+            cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
+          })();
+        </script>
+
+  Listo!!! ya tu negocio está listo para recibir dinero desde tu página web. Recuerda que debes colocar tu WEB Key en "YOUR WEB KEY" y puedes elegir el color del botón de pago entre blanco, azul y negro colocando white, blue o black donde dice "YOUR THEME".
+  Observa que hemos utilizado el id "botonClipClap", tu puedes colocar el que gustes, siempre y cuando el atributo id de la etiqueta `<button> tenga el mismo
+
+  > ***Nota:*** Es importante que mantengas la estructura donde dice _$clipclap._Buttons, es un formato muy específico llamado JSON *.
+
 
 
 
