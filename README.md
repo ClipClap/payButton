@@ -119,7 +119,7 @@ Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos 
           })();
         </script>
 
-Todo lo anterior también puedes Hacerlo de otra forma. Utiliza la que más te guste:
+Existe una segunda forma de implementar el botón, y es la siguiente. Utiliza la que más te guste:
 
 *Forma 'producto por producto':*
 
@@ -236,6 +236,9 @@ Puedes implementar cuántas veces quieras el botón de pago en tu página web. P
           })();
         </script>
 ```
+
+  > ***Nota:*** Utiliza sólo una forma de implementación, la primera enviando datos desde el script o la segunda enviando datos como atributos html.
+
 
 Listo, ya tienes dos botones en la misma página para cobrar producto por producto y cobrar el total del combo.
 
