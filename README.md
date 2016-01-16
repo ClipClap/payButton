@@ -87,7 +87,6 @@ Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos 
 
   La lista de impuestos, taxId es la siguiente:
 
-## Tipos de impuesto ##
 
     1 => IVA Regular del 16%
     2 => IVA Reducido del 5%
@@ -178,8 +177,54 @@ Todo lo anterior tambien puedes Hacerlo de otra forma. Utiliza la que más te gu
     </body>
 ```
 
+Observa que esta vez, hemos llamado al botón por el id test
 
+## Avanzado ##
 
+Puedes implementar cuantas veces quieras el botón de pago en tu página web y combinar las formas. Por ejemplo si quieres que tu pagína web tenga dos botones. Uno para enviar producto por producto, y uno para cobrar el combo completo, lo puedes hacer así:
+
+``` html
+        <button class="productos"></button>
+        <button id="total" data-clipclap="{
+              'netValue': '13000',
+              'taxValue': '1000',
+              'tipValue': '500',
+              'description': 'Combo 1. Hambuerguesa, Perro y Gaseosa'
+            }" ></button>
+      </div>
+        <script type="text/javascript">
+          var _$clipclap = _$clipclap || {};
+          _$clipclap._setKey = 'YOUR WEB KEY';
+          _$clipclap._setButtons = "#total";
+          _$clipclap._themeButton = "YOUR THEME";
+          _$clipclap._Buttons = {
+            ".productos":{
+              'details': [{
+                'itemCount': '1',
+                'itemName': 'Hamburguesa',
+                'itemValue': '8000',
+                'taxId': '4'
+              }, {
+                'itemCount': '1',
+                'itemName': 'Perro Caliente',
+                'itemValue': '4000',
+                'taxId': '4'
+              }, {
+                'itemCount': '2',
+                'itemName': 'Gaseosa',
+                'itemValue': '2000',
+                'taxId': '4'
+              }]
+            }
+          };
+          (function() {
+            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
+          })();
+        </script>
+```
+
+Listo, ya tienes dos botones en la misma página para cobrar producto por producto y cobrar el total del combo.
 
 
 
