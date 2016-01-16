@@ -24,7 +24,7 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
 
 a) *Forma 'producto por producto':* Esta opción permite agregar al cobro productos de forma individual especificando su nombre, precio , cantidad y el impuesto que debe llevar el producto.
 
-b) *Forma 'total-impuesto-propina':* Esta opción permite definir el total a cobrar de forma inmediata especificando el total a cobrar sin impuestos, el impuesto sobre el total y de forma opcional la propina.
+b) *Forma 'total-impuesto-propina':* Esta opción permite definir el total a cobrar de forma inmediata especificando el total a cobrar, el impuesto a cobrar y de forma opcional la propina.
 > ***Nota:*** Estas dos formas de crear el cobro son mutuamente excluyentes. Si usted utiliza ambas formas al mismo tiempo, la *forma 'total-impuesto'* prevalece sobre la *forma 'producto-por-producto'*.
 
 ## Integración ##
@@ -45,27 +45,29 @@ Listo!, ves que fácil. Ya estás a la mitad de implementar el botón.
 
 Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos que tu negocio vende productos de alimentos y quieres cobrar una hamburguesa por el costo de $8000, un perro caliente por el costo de $4000 y dos gaseosas por el costo de $2000 cada una. Agregarías los datos así:
 
+*Forma 'producto por producto':*
+
         <script type="text/javascript">
           var _$clipclap = _$clipclap || {};
           _$clipclap._setKey = 'YOUR WEB KEY';
           _$clipclap._themeButton = "YOUR THEME";
           _$clipclap._Buttons = {
             "#botonClipClap":{
-              "details": [{
-                "itemCount": "1",
-                "itemName": "Hamburguesa",
-                "itemValue": "8000",
-                "taxId": "4"
+              'details': [{
+                'itemCount': '1',
+                'itemName': 'Hamburguesa',
+                'itemValue': '8000',
+                'taxId': '4'
               }, {
-                "itemCount": "1",
-                "itemName": "Perro Caliente",
-                "itemValue": "4000",
-                "taxId": "4"
+                'itemCount': '1',
+                'itemName': 'Perro Caliente',
+                'itemValue': '4000',
+                'taxId': '4'
               }, {
-                "itemCount": "2",
-                "itemName": "Gaseosa",
-                "itemValue": "2000",
-                "taxId": "4"
+                'itemCount': '2',
+                'itemName': 'Gaseosa',
+                'itemValue': '2000',
+                'taxId': '4'
               }]
             }
           };
@@ -83,11 +85,98 @@ Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos 
 
   > ***Nota:*** Es importante que mantengas la estructura donde dice _$clipclap._Buttons, es un formato muy específico llamado JSON *.
 
+  La lista de impuestos, taxId es la siguiente:
 
+## Tipos de impuesto ##
 
+    1 => IVA Regular del 16%
+    2 => IVA Reducido del 5%
+    3 => IVA Excento del 0%
+    4 => IVA Excluído del 0%
+    5 => Consumo Regular 8%
+    6 => Consumo Reducido 4%
+    7 => IVA Ampliado 20%
 
+  También puedes enviar sólo el total, por ejemplo, tu negocio quiere vender un combo de Hamburguesa, perro y dos gaseosas por el costo de $13000, impuesto de $1000 y propina de $500. Puedes hacerlo así:
 
+*Forma 'total-impuesto-propina':*
 
+        <script type="text/javascript">
+          var _$clipclap = _$clipclap || {};
+          _$clipclap._setKey = 'YOUR WEB KEY';
+          _$clipclap._themeButton = "YOUR THEME";
+          _$clipclap._Buttons = {
+            "#botonClipClap":{
+              'netValue': '13000',
+              'taxValue': '1000',
+              'tipValue': '500',
+              'description': 'Combo 1. Hambuerguesa, Perro y Gaseosa'
+            }
+          };
+          (function() {
+            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
+            cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
+          })();
+        </script>
+
+Todo lo anterior tambien puedes Hacerlo de otra forma. Utiliza la que más te guste:
+
+*Forma 'producto por producto':*
+``` html
+        <button id="test" data-clipclap="{
+              'details': [{
+                'itemCount': '1',
+                'itemName': 'Hamburguesa',
+                'itemValue': '8000',
+                'taxId': '4'
+              }, {
+                'itemCount': '1',
+                'itemName': 'Perro Caliente',
+                'itemValue': '4000',
+                'taxId': '4'
+              }, {
+                'itemCount': '2',
+                'itemName': 'Gaseosa',
+                'itemValue': '2000',
+                'taxId': '4'
+              }]
+            }" ></button>
+      </div>
+        <script type="text/javascript">
+          var _$clipclap = _$clipclap || {};
+          _$clipclap._setKey = 'YOUR WEB KEY';
+          _$clipclap._setButtons = "#test";
+          _$clipclap._themeButton = "YOUR THEME";
+          (function() {
+            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
+          })();
+        </script>
+    </body>
+```
+
+*Forma 'total-impuesto-propina':*
+``` html
+        <button id="test" data-clipclap="{
+              'netValue': '13000',
+              'taxValue': '1000',
+              'tipValue': '500',
+              'description': 'Combo 1. Hambuerguesa, Perro y Gaseosa'
+            }" ></button>
+      </div>
+        <script type="text/javascript">
+          var _$clipclap = _$clipclap || {};
+          _$clipclap._setKey = 'YOUR WEB KEY';
+          _$clipclap._setButtons = "#test";
+          _$clipclap._themeButton = "YOUR THEME";
+          (function() {
+            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
+          })();
+        </script>
+    </body>
+```
 
 
 
