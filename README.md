@@ -79,7 +79,7 @@ Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos 
   Listo!!! ya tu negocio está listo para recibir dinero desde tu página web.
 
   Recuerda que debes colocar tu WEB Key en "YOUR WEB KEY" y puedes elegir el color del botón de pago entre blanco, azul y negro colocando white, blue o black donde dice "YOUR THEME".
-  Observa que hemos utilizado el id "botonClipClap", tu puedes colocar el que gustes, siempre y cuando el atributo id de la etiqueta `<button> tenga el mismo
+  Observa que hemos utilizado el id "botonClipClap", tu puedes colocar el que gustes, siempre y cuando el atributo id de la etiqueta `<button>` tenga el mismo nombre.
 
   > ***Nota:*** Es importante que mantengas la estructura donde dice _$clipclap._Buttons, es un formato muy específico llamado JSON *.
 
