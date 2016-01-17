@@ -5,19 +5,19 @@ ClipClap te permite incorporar la acción de pagar en tu página web de forma f�
 ## Prerrequisitos ##
 
  1. ***Tener una cuenta ClipClap Datáfono:***
-Si no tienes una cuenta en ClipClap Datáfono, puedes hacer el proceso de registro siguiendo este [link](https://clipclap.co/datafono/dashboard/php/views/login.php){:target="_blank"} o desde la misma aplicación ClipClap Datáfono.
+Si no tienes una cuenta en ClipClap Datáfono, puedes hacer el proceso de registro siguiendo este [link](https://clipclap.co/datafono/dashboard/php/views/login.php) o desde la misma aplicación ClipClap Datáfono.
 
  2. ***Tener el webKey de tu negocio:***
-Una vez tengas tu usuario Datáfono, tendrás que tener a la mano el “webKey” de tu negocio, puedes consultar los pasos para adquirirlos en detalle [aquí](https://clipclap.co/datafono/dashboard/php/views/settings.php){:target="_blank"}.
+Una vez tengas tu usuario Datáfono, tendrás que tener a la mano el “webKey” de tu negocio, puedes consultar los pasos para adquirirlos en detalle [aquí](https://clipclap.co/datafono/dashboard/php/views/settings.php).
 
  3. ***Guardar el nombre del dominio de tu página:***
-Debes Colocar el nombre del dominio de tu página para que te permitamos usar nuestro servicio. Si no lo haz hecho hazlo [aquí](https://clipclap.co/datafono/dashboard/php/views/settings.php){:target="_blank"}.
+Debes Colocar el nombre del dominio de tu página para que te permitamos usar nuestro servicio. Si no lo haz hecho hazlo [aquí](https://clipclap.co/datafono/dashboard/php/views/settings.php).
 
  4. ***ClipClap Billetera para tus clientes:***
 Para que tus usuarios puedan acceder al evento de pago de ClipClap deben tener instalada la aplicación Billetera, esta permitirá realizar los pagos de forma rápida y segura para tus clientes.
 
  5. ***Entorno de Prueba y Entorno de Producción:***
-Recuerda que puedes cambiar entre entorno de prueba y de producción, para llevar un mayor control de tu integración. puedes aprender cómo hacerlo en el siguiente [link](https://clipclap.co/datafono/dashboard/php/views/settings.php){:target="_blank"}.
+Recuerda que puedes cambiar entre entorno de prueba y de producción, para llevar un mayor control de tu integración. puedes aprender cómo hacerlo en el siguiente [link](https://clipclap.co/datafono/dashboard/php/views/settings.php).
 
  6. ***Formas de enviar información:***
 Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
