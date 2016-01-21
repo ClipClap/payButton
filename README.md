@@ -157,7 +157,7 @@ Coloca esto al final, reemplazando "YOUR WEB KEY" y "YOUR THEME"
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
           })();
         </script>
-    </body>
+
 
 
 *Forma 'total-impuesto-propina':*
@@ -185,7 +185,7 @@ Coloca esto al final, reemplazando "YOUR WEB KEY" y "YOUR THEME"
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
           })();
         </script>
-    </body>
+
 
 
 Observa que esta vez, hemos llamado al botón por el id test
