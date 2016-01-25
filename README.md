@@ -53,7 +53,7 @@ Para finalizar debes agregar estás líneas al final del documento:
           })();
         </script>
 
-Recuerda que debes reemplazar tu WEB Key en "YOUR WEB KEY". Por defecto, el botón de pago es azul pero puedes cambiar a blanco o negro agregando el atributo '_$clipclap._themeButton' como se muestra acontinuación:
+Recuerda que debes reemplazar tu WEB Key en "YOUR WEB KEY". Por defecto, el botón de pago es azul pero puedes cambiar a blanco o negro agregando el atributo '_$clipclap._themeButton' como se muestra a continuación:
 
         <script type="text/javascript">
           var _$clipclap = _$clipclap || {};
