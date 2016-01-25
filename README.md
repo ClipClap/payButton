@@ -107,11 +107,6 @@ Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos 
 
   Listo!!! ya tu negocio está listo para recibir dinero desde tu página web.
 
-
-  Observa que hemos utilizado el id "botonClipClap", tu puedes colocar el que gustes, siempre y cuando el atributo id de la etiqueta `<button>` tenga el mismo nombre.
-
-  > ***Nota:*** Es importante que mantengas la estructura donde dice _$clipclap._Buttons, es un formato muy específico llamado JSON *.
-
   La lista de impuestos, taxId es la siguiente:
 
 
@@ -122,6 +117,12 @@ Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos 
     5 => Consumo Regular 8%
     6 => Consumo Reducido 4%
     7 => IVA Ampliado 20%
+
+  Observa que hemos utilizado el id "botonClipClap", tu puedes colocar el que gustes, siempre y cuando el atributo id de la etiqueta `<button>` tenga el mismo nombre.
+
+  > ***Nota:*** Es importante que mantengas la estructura donde dice _$clipclap._Buttons, es un formato muy específico llamado JSON *.
+
+
 
   También puedes enviar sólo el total, por ejemplo, tu negocio quiere vender un combo de Hamburguesa, perro y dos gaseosas por el costo de $13000, impuesto de $1000 y propina de $500. Puedes hacerlo así:
 
