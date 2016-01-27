@@ -228,7 +228,6 @@ Puedes implementar cuántas veces quieras el botón de pago en tu página web. P
         <script type="text/javascript">
           var _$clipclap = _$clipclap || {};
           _$clipclap._setKey = 'YOUR WEB KEY';
-          _$clipclap._setButtons = "#total";
           _$clipclap._themeButton = "YOUR THEME";
           _$clipclap._Buttons = {
             ".productos":{
