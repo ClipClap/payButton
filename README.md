@@ -274,14 +274,15 @@ Usted puede establecer una url de respuesta siguiendo este [link](https://clipcl
 
 ```
   //Cuando el pago es aprobado
-  {
-  "estado" : "Aprobado",
+ {
+ "estado" : "Aprobado",
+  "numAprobacion":"1237654",
   "fechaTransaccion":"Wed Jan 27 2016 13:54:13 GMT-0500 (COT)" ,
-  "ahYtgH78ThjlLrTh&tGb"
+  "codRespuesta": "3001", "token": "ahYtgH78ThjlLrTh&tGb"
   }
 
   //Cuando el pago es rechazado
-  {
+ {
   "estado" : "Rechazado",
   "codRespuesta": "3001",
   "token": "ahYtgH78ThjlLrTh&tGb"
