@@ -269,4 +269,25 @@ Puedes implementar cuántas veces quieras el botón de pago en tu página web. P
 Listo, ya tienes dos botones en la misma página para cobrar producto por producto y cobrar el total del combo.
 
 
+##Callback
+Usted puede establecer una url de respuesta siguiendo este [link](https://clipclap.co/datafono/dashboard/php/views/settings.php), a esta url nosotros le generamos un post automático para indicarle el estado de la transacción de un cliente. Este post envía la siguiente estructura de dato:
+
+```
+  //Cuando el pago es aprobado
+  {
+  "estado" : "Aprobado",
+  "fechaTransaccion":"Wed Jan 27 2016 13:54:13 GMT-0500 (COT)" ,
+  "ahYtgH78ThjlLrTh&tGb"
+  }
+
+  //Cuando el pago es rechazado
+  {
+  "estado" : "Rechazado",
+  "codRespuesta": "3001",
+  "token": "ahYtgH78ThjlLrTh&tGb"
+  }
+```
+
+
+
 
