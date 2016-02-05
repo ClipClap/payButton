@@ -80,6 +80,7 @@ Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos 
           _$clipclap._themeButton = "YOUR THEME";
           _$clipclap._Buttons = {
             "#botonClipClap":{
+              'paymentRef': 'ref0000001',
               'details': [{
                 'itemCount': '1',
                 'itemName': 'Hamburguesa',
@@ -134,6 +135,7 @@ Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos 
           _$clipclap._themeButton = "YOUR THEME";
           _$clipclap._Buttons = {
             "#botonClipClap":{
+              'paymentRef': 'ref0000001',
               'netValue': '13000',
               'taxValue': '1000',
               'tipValue': '500',
@@ -155,6 +157,7 @@ Establece los datos como atributo html
 
 ``` html
         <button id="test" data-clipclap="{
+              'paymentRef': 'ref0000001',
               'details': [{
                 'itemCount': '1',
                 'itemName': 'Hamburguesa',
@@ -194,6 +197,7 @@ Establece los datos como atributo html
 
 ``` html
         <button id="test" data-clipclap="{
+              'paymentRef': 'ref0000001',
               'netValue': '13000',
               'taxValue': '1000',
               'tipValue': '500',
@@ -231,6 +235,7 @@ Puedes implementar cuántas veces quieras el botón de pago en tu página web. P
           _$clipclap._themeButton = "YOUR THEME";
           _$clipclap._Buttons = {
             ".productos":{
+              'paymentRef': 'ref0000001',
               'details': [{
                 'itemCount': '1',
                 'itemName': 'Hamburguesa',
@@ -249,6 +254,7 @@ Puedes implementar cuántas veces quieras el botón de pago en tu página web. P
               }]
             },
             "#total":{
+              'paymentRef': 'ref0000002',
               'netValue': '13000',
               'taxValue': '1000',
               'tipValue': '500',
@@ -274,6 +280,7 @@ Usted puede establecer una url de respuesta siguiendo este [link](https://clipcl
 ```
   //Cuando el pago es aprobado
  {
+ "paymentRef": "ref0000001",
  "estado" : "Aprobado",
   "numAprobacion":"1237654",
   "fechaTransaccion":"Wed Jan 27 2016 13:54:13 GMT-0500 (COT)" ,
@@ -282,6 +289,7 @@ Usted puede establecer una url de respuesta siguiendo este [link](https://clipcl
 
   //Cuando el pago es rechazado
  {
+ "paymentRef": "ref0000001",
   "estado" : "Rechazado",
   "codRespuesta": "3001",
   "token": "ahYtgH78ThjlLrTh&tGb"
