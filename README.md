@@ -1,4 +1,4 @@
-### Web Pay Button ###
+## Web Pay Button ##
 
 ClipClap te permite incorporar la acción de pagar en tu página web de forma fácil y rápida. Sólo debes realizar estos sencillos pasos y listo.
 
@@ -292,3 +292,43 @@ Usted puede establecer una url de respuesta siguiendo este [link](https://clipcl
   "token": "ahYtgH78ThjlLrTh&tGb"
   }
 ```
+
+### Función `transactionState`  ###
+Usted puede definir la función `transactionState` en la variable global `_$clipclap` recibiendo los siguientes paramentros: `status`, `codRespuesta`, `paymentRef`, `token`, opcionalmente puede recibir `numAprobacion` y `fechaTransaccion`; esta función es ejecutada cada vez que una transacción finalice. ejemplo:
+
+``` html
+    <button class="productos"></button>
+    <button id="total"></button>
+    <script type="text/javascript">
+        var _$clipclap = _$clipclap || {};
+        _$clipclap._setKey = 'YOUR WEB KEY';
+        _$clipclap.transactionState = function(status, codRespuesta, paymentRef, token, numAprobacion, fechaTransaccion){
+             /*Aqui usted puede implementar la funcón, Ejemplo:
+                if(status === "Aprobado"){
+                    alert("Pago realizado exitosamente");
+                }
+            */
+        }
+        (function() {
+            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
+        })();
+    </script>
+```
+
+Descripción de los parametros:
+
+`status`: parametro de tipo string y los valores pueden ser `Aprobado` ó `Rechazado`.
+
+`codRespuesta`: parametro de tipo string y los valores pueden ser `3001` indicado que la transacción fue aprobada, `1002` indica que la transacción fue rechazada (Expiro tiempo de respuesta por parte del usuario) y `1000` indica que la transacción fue rechazada por el usuario. 
+
+`paymentRef`: parametro de tipo string y el valor es la referencia de pago con que se genero la transacción.
+
+`token`: parametro de tipo string y el valor es el token generado para la transacción.
+
+`numAprobacion`: parametro de tipo string y el valor es el numero de aprobación de la tranacción, siempre que la transacción sea de estado `Aprobado` de lo contrario el valor sera `undefined`.
+
+`fechaTransaccion`: parametro de tipo string y el valor es la fecha de aprobación de la tranacción con el siguiente formato `Wed Feb 10 2016 17:54:46 GMT+0000 (UTC)`, siempre que la transacción sea de estado `Aprobado` de lo contrario el valor sera `undefined`.
+
+> ***Nota:*** Es importante que mantenga el orden de los parametros.
+
