@@ -318,17 +318,17 @@ Usted puede definir la función `transactionState` en la variable global `_$clip
 
 Descripción de los parámetros:
 
-`status`: parametro de tipo *string* y los valores pueden ser `"Aprobado"` ó `"Rechazado"`.
+`status`: parámetro de tipo *string* y los valores pueden ser `"Aprobado"` ó `"Rechazado"`.
 
-`codRespuesta`: parametro de tipo *string* y los valores pueden ser `"3001"` indicado que la transacción fue aprobada, `"1002"` indica que la transacción fue rechazada (Expiro tiempo de respuesta por parte del usuario) y `"1000"` indica que la transacción fue rechazada por el usuario. 
+`codRespuesta`: parámetro de tipo *string* y los valores pueden ser `"3001"` indicado que la transacción fue aprobada, `"1002"` indica que la transacción fue rechazada (Expiró tiempo de respuesta por parte del usuario) y `"1000"` indica que la transacción fue rechazada por el usuario. 
 
-`paymentRef`: parametro de tipo *string* y el valor es la referencia de pago con que se generó por la transacción.
+`paymentRef`: parámetro de tipo *string* y el valor es la referencia de pago con que se generó la transacción.
 
-`token`: parametro de tipo *string* y el valor es el token generado para la transacción.
+`token`: parámetro de tipo *string* y el valor es el token generado para la transacción.
 
-`numAprobacion`: parametro de tipo *string* y el valor es el numero de aprobación de la transacción, siempre que la transacción sea de estado `"Aprobado"` de lo contrario el valor sera `undefined`.
+`numAprobacion`: parámetro de tipo *string* y el valor es el número de aprobación de la transacción, siempre que la transacción sea de estado `"Aprobado"` de lo contrario el valor será `undefined`.
 
-`fechaTransaccion`: parametro de tipo *string* y el valor es la fecha de aprobación de la transacción con el siguiente formato `"Wed Feb 10 2016 17:54:46 GMT+0000 (UTC)"`, siempre que la transacción sea de estado `Aprobado` de lo contrario el valor será `undefined`.
+`fechaTransaccion`: parámetro de tipo *string* y el valor es la fecha de aprobación de la transacción con el siguiente formato `"Wed Feb 10 2016 17:54:46 GMT+0000 (UTC)"`, siempre que la transacción sea de estado `"Aprobado"` de lo contrario el valor será `undefined`.
 
 > ***Nota:*** Es importante que mantenga el orden de los parámetros.
 
