@@ -344,7 +344,7 @@ Descripción de los parámetros:
 > ***Nota:*** Es importante que mantenga el orden de los parámetros.
 
 ### ¿Y si me equivoco en el proceso de implementación? ###
-Para que puedas seguir el proceso de implementación sin ningún problema, se ha creado un parámetro (debugButton) para que puedas ir viendo los posibles errores durante la faceta de implementación. Si deseás habilitar el modo debug, sólo debes incluir lo siguiente en tu
+Para que puedas seguir el proceso de implementación sin ningún problema, se ha creado un parámetro (debugButton) para que puedas ir viendo los posibles errores durante la faceta de implementación. Si deseás habilitar el modo debug, sólo debes incluir  _$clipclap._debugButton = true como se ve a continuación:
 
 ``` html
     <button class="productos"></button>
