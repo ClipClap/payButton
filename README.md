@@ -271,8 +271,12 @@ Puedes implementar cuántas veces quieras el botón de pago en tu página web. P
 
 Listo, ya tienes dos botones en la misma página para cobrar producto por producto y cobrar el total del combo.
 
-### Callback ###
-Usted puede establecer una url de respuesta siguiendo este [link](https://clipclap.co/datafono/dashboard/php/views/settings.php), a esta url nosotros le generamos un POST automático para indicarle el estado de la transacción de un cliente. Este POST envía la siguiente estructura de dato:
+### ¿Cómo puedo conocer el resultado de la operación? ###
+Para ello, te enviaremos la información por dos caminos diferentes:
+
+1. *El primer camino es una respuesta segura para que tu negocio actualice sus datos internamente, esto es, enviaremos un POST automático para indicarte el estado de la transacción realizada.
+Puedes indicarnos a cuál url enviaremos esta petición llenando el campo 'URL de Respuesta' en este [link](https://clipclap.co/datafono/dashboard/php/views/settings.php).
+Los datos que enviaremos tendrán el siguiente formato:
 
 ```javascript
   //Cuando el pago es aprobado
@@ -292,9 +296,12 @@ Usted puede establecer una url de respuesta siguiendo este [link](https://clipcl
   "token": "ahYtgH78ThjlLrTh&tGb"
   }
 ```
+*
 
-### Función `transactionState`  ###
-Usted puede definir la función `transactionState` en la variable global `_$clipclap` recibiendo los siguientes parámetros: `status`, `codRespuesta`, `paymentRef`, `token`, opcionalmente puede recibir `numAprobacion` y `fechaTransaccion`; esta función es ejecutada cada vez que una transacción finalice. ejemplo:
+2. *El segundo camino, es la respuesta para que tu aplicación web pueda mostrarle al usuario la respuesta del proceso. Este camino depende del parámetro 'Modo redirect' que puedes modificar siguiendo el siguiente link [enlace](https://clipclap.co/datafono/dashboard/php/views/settings.php).
+a. **El 'Modo redirect' está activo (Si): Si este parámetro está activo, significa que el proceso se realizará desde nuestra página web, y al final del proceso nuestro sistema redireccionará a la url que configures en el parámero 'url de Retorno' en el siguiente [link](https://clipclap.co/datafono/dashboard/php/views/settings.php).
+b. **El 'Modo redirect' no está activo (No): Si este parámetro no está activo, significa que el proceso se realizará en la página de tu negocio a través de un 'modal', y al final del proceso se ejecutará la función `transactionState`.
+Esta función es debe colcoar en la variable global `_$clipclap` recibiendo los siguientes parámetros: `status`, `codRespuesta`, `paymentRef`, `token`, opcionalmente puede recibir `numAprobacion` y `fechaTransaccion`; esta función es ejecutada cada vez que una transacción finalice. ejemplo:
 
 ``` html
     <button class="productos"></button>
@@ -320,7 +327,7 @@ Descripción de los parámetros:
 
 `status`: parámetro de tipo *string* y los valores pueden ser `"Aprobado"` ó `"Rechazado"`.
 
-`codRespuesta`: parámetro de tipo *string* y los valores pueden ser `"3001"` indicado que la transacción fue aprobada, `"1002"` indica que la transacción fue rechazada (Expiró tiempo de respuesta por parte del usuario) y `"1000"` indica que la transacción fue rechazada por el usuario. 
+`codRespuesta`: parámetro de tipo *string* y los valores pueden ser `"3001"` indicado que la transacción fue aprobada, `"1002"` indica que la transacción fue rechazada (Expiró tiempo de respuesta por parte del usuario) y `"1000"` indica que la transacción fue rechazada por el usuario.
 
 `paymentRef`: parámetro de tipo *string* y el valor es la referencia de pago con que se generó la transacción.
 
@@ -332,3 +339,19 @@ Descripción de los parámetros:
 
 > ***Nota:*** Es importante que mantenga el orden de los parámetros.
 
+### ¿Y si me equivoco en el proceso de implementación? ###
+Para que puedas seguir el proceso de implementación sin ningún problema, se ha creado un parámetro (debugButton) para que puedas ir viendo los posibles errores durante la faceta de implementación. Si deseás habilitar el modo debug, sólo debes incluir lo siguiente en tu
+
+``` html
+    <button class="productos"></button>
+    <button id="total"></button>
+    <script type="text/javascript">
+        var _$clipclap = _$clipclap || {};
+        _$clipclap._setKey = 'YOUR WEB KEY';
+        _$clipclap._debugButton = true
+        (function() {
+            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
+        })();
+    </script>
+```
