@@ -274,7 +274,7 @@ Listo, ya tienes dos botones en la misma página para cobrar producto por produc
 ### ¿Cómo puedo conocer el resultado de la operación? ###
 Para ello, te enviaremos la información por dos caminos diferentes:
 
-1. ***El primer camino es una respuesta segura para que tu negocio actualice sus datos internamente, esto es, enviaremos un POST automático para indicarte el estado de la transacción realizada.
+1. ***El primer camino*** es una respuesta segura para que tu negocio actualice sus datos internamente, esto es, enviaremos un POST automático para indicarte el estado de la transacción realizada.
 Puedes indicarnos a cuál url enviaremos esta petición llenando el campo 'URL de Respuesta' en este [link](https://clipclap.co/datafono/dashboard/php/views/settings.php).
 Los datos que enviaremos tendrán el siguiente formato:
 
@@ -299,9 +299,9 @@ Los datos que enviaremos tendrán el siguiente formato:
 ```
 
 
-2. ***El segundo camino, es la respuesta para que tu aplicación web pueda mostrarle al usuario la respuesta del proceso. Este camino depende del parámetro 'Modo redirect' que puedes modificar siguiendo el siguiente link [enlace](https://clipclap.co/datafono/dashboard/php/views/settings.php).
-a. ***El 'Modo redirect' está activo (Si): Si este parámetro está activo, significa que el proceso se realizará desde nuestra página web, y al final del proceso nuestro sistema redireccionará a la url que configures en el parámero 'url de Retorno' en el siguiente [link](https://clipclap.co/datafono/dashboard/php/views/settings.php).
-b. ***El 'Modo redirect' no está activo (No): Si este parámetro no está activo, significa que el proceso se realizará en la página de tu negocio a través de un 'modal', y al final del proceso se ejecutará la función `transactionState`.
+2. ***El segundo camino***, es la respuesta para que tu aplicación web pueda mostrarle al usuario la respuesta del proceso. Este camino depende del parámetro 'Modo redirect' que puedes modificar siguiendo el siguiente link [enlace](https://clipclap.co/datafono/dashboard/php/views/settings.php).
+a. ***El 'Modo redirect' está activo (Si):*** Si este parámetro está activo, significa que el proceso se realizará desde nuestra página web, y al final del proceso nuestro sistema redireccionará a la url que configures en el parámero 'url de Retorno' en el siguiente [link](https://clipclap.co/datafono/dashboard/php/views/settings.php).
+b. ***El 'Modo redirect' no está activo (No):*** Si este parámetro no está activo, significa que el proceso se realizará en la página de tu negocio a través de un 'modal', y al final del proceso se ejecutará la función `transactionState`.
 Esta función es debe colcoar en la variable global `_$clipclap` recibiendo los siguientes parámetros: `status`, `codRespuesta`, `paymentRef`, `token`, opcionalmente puede recibir `numAprobacion` y `fechaTransaccion`; esta función es ejecutada cada vez que una transacción finalice. ejemplo:
 
 ``` html
