@@ -278,23 +278,24 @@ Para ello, te enviaremos la información por dos caminos diferentes:
 Puedes indicarnos a cuál url enviaremos esta petición llenando el campo 'URL de Respuesta' en este [link](https://clipclap.co/datafono/dashboard/php/views/settings.php).
 Los datos que enviaremos tendrán el siguiente formato:
 
-```javascript
-  //Cuando el pago es aprobado
- {
- "paymentRef": "ref0000001",
- "estado" : "Aprobado",
-  "numAprobacion":"1237654",
-  "fechaTransaccion":"Wed Jan 27 2016 13:54:13 GMT-0500 (COT)" ,
-  "codRespuesta": "3001", "token": "ahYtgH78ThjlLrTh&tGb"
-  }
 
-  //Cuando el pago es rechazado
- {
- "paymentRef": "ref0000001",
-  "estado" : "Rechazado",
-  "codRespuesta": "3001",
-  "token": "ahYtgH78ThjlLrTh&tGb"
-  }
+``` html
+   //Cuando el pago es aprobado
+   {
+   "paymentRef": "ref0000001",
+   "estado" : "Aprobado",
+    "numAprobacion":"1237654",
+    "fechaTransaccion":"Wed Jan 27 2016 13:54:13 GMT-0500 (COT)" ,
+    "codRespuesta": "3001", "token": "ahYtgH78ThjlLrTh&tGb"
+    }
+
+    //Cuando el pago es rechazado
+   {
+   "paymentRef": "ref0000001",
+    "estado" : "Rechazado",
+    "codRespuesta": "3001",
+    "token": "ahYtgH78ThjlLrTh&tGb"
+    }
 ```
 
 
