@@ -43,5 +43,7 @@ Esta petición dos devolera un JSON de la siguiente forma:
 Donde:
 El valor de `url`es el enlace a incorporar en los email o documentos digitales (Facturas Electronicas) 
 
-```https://clipclap.co/paybutton/php/pagosclipclap.php/?webKey=JsUpghDncew5USqVIGFw&netValue=100000&taxValue=0&tipValue=0&description=Zapatos&paymentRef=refoskar3874378387&hash=e7cc074c36befd23f9dbbd79b10560f1dad3b649f4d8954edbb3f46b7ae046af```
- 
+```
+https://clipclap.co/paybutton/php/pagosclipclap.php/?webKey=JsUpghDncew5USqVIGFw&netValue=100000&taxValue=0&tipValue=0&description=Zapatos&paymentRef=refoskar3874378387&hash=e7cc074c36befd23f9dbbd79b10560f1dad3b649f4d8954edbb3f46b7ae046af
+```
+
