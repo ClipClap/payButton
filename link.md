@@ -1,4 +1,4 @@
-## Link Pay ##
+## link de pago ##
 
 ClipClap te permite generar link para que te puedan pagar desde un email o documento o factura electronica de forma fácil y rápida. Sólo debes realizar estos sencillos pasos y listo.
 
