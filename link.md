@@ -25,7 +25,7 @@ La forma de crear un link de pago para que ClipClap Billetera lo gestione es la 
 ### Generar enlace de pago ###
 Para generar un enlace de pago, ClipClap provee un servicio al que se accede a través de una peticion POST y este le devuelbe el enlace de pago que se desea implementar en un email o documento electronico (Factura Electronica); la peticion es: 
 
-```curl -X POST -F "key=ltOrrdHyvQ0DHXgxRp0G" -F "webKey=JsUpghDncew5USqVIGFw" -F "netValue=100000" -F "taxValue=0" -F "tipValue=0" -F "description=Zapatos" -F "paymentRef=refoskar3874378387" "https://clipclap.co/tools/generadorurl.php"```
+```curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{"netValue":"100000","taxValue":"0","tipValue":"0","description":"Zapatos","secretKey":"ltOrrdHyvQ0DHXgxRp0G","webKey":"JsUpghDncew5USqVIGFw"}' "https://payment.clipclap.co/tools/generatelink"```
 
 Donde: 
 **key**: Es el secretkey del comercio
@@ -38,12 +38,12 @@ Donde:
 
 Esta petición dos devolera un JSON de la siguiente forma:
 
-```{"url":"https://clipclap.co/paybutton/php/pagosclipclap.php/?webKey=JsUpghDncew5USqVIGFw&netValue=100000&taxValue=0&tipValue=0&description=Zapatos&paymentRef=refoskar3874378387&hash=e7cc074c36befd23f9dbbd79b10560f1dad3b649f4d8954edbb3f46b7ae046af"}```
+```{"url": "https://payment.clipclap.co/pay/?webKey=JsUpghDncew5USqVIGFw&netValue=100000&taxValue=0&tipValue=0&description=Zapatos&socialNetwork=1472744864512&hash=53b81739c178bb4478a47d52f084a467b6b60006cb82a4ef7438c9db96bb4dfa"}```
 
 Donde:
 El valor de `url`es el enlace a incorporar en los email o documentos digitales (Facturas Electronicas) 
 
 ```
-https://clipclap.co/paybutton/php/pagosclipclap.php/?webKey=JsUpghDncew5USqVIGFw&netValue=100000&taxValue=0&tipValue=0&description=Zapatos&paymentRef=refoskar3874378387&hash=e7cc074c36befd23f9dbbd79b10560f1dad3b649f4d8954edbb3f46b7ae046af
+https://payment.clipclap.co/pay/?webKey=JsUpghDncew5USqVIGFw&netValue=100000&taxValue=0&tipValue=0&description=Zapatos&socialNetwork=1472744864512&hash=53b81739c178bb4478a47d52f084a467b6b60006cb82a4ef7438c9db96bb4dfa
 ```
 
