@@ -48,7 +48,7 @@ Para finalizar debes agregar estás líneas al final del documento:
         _$clipclap._setKey = 'YOUR WEB KEY';
         (function() {
             var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
-            cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            cc.src = 'https://payment.clipclap.co/js/paybutton.min.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
         })();
     </script>
@@ -63,7 +63,7 @@ Recuerda que debes reemplazar tu WEB Key en "YOUR WEB KEY". Por defecto, el bot�
         _$clipclap._themeButton = "YOUR THEME";
         (function() {
             var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
-            cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            cc.src = 'https://payment.clipclap.co/js/paybutton.min.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
         })();
     </script>
@@ -104,7 +104,7 @@ Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos 
         };
         (function() {
             var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
-            cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            cc.src = 'https://payment.clipclap.co/js/paybutton.min.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
         })();
     </script>
@@ -145,7 +145,7 @@ También puedes enviar sólo el total, por ejemplo, tu negocio quiere vender un 
         };
         (function() {
             var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;
-            cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            cc.src = 'https://payment.clipclap.co/js/paybutton.min.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
         })();
     </script>
@@ -185,7 +185,7 @@ Coloca esto al final, reemplazando "YOUR WEB KEY" y "YOUR THEME"
         _$clipclap._setButtons = "#test";
         _$clipclap._themeButton = "YOUR THEME";
         (function() {
-            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://payment.clipclap.co/js/paybutton.min.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
         })();
     </script>
@@ -214,7 +214,7 @@ Coloca esto al final, reemplazando "YOUR WEB KEY" y "YOUR THEME"
         _$clipclap._setButtons = "#test";
         _$clipclap._themeButton = "YOUR THEME";
         (function() {
-            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://payment.clipclap.co/js/paybutton.min.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
         })();
     </script>
@@ -261,7 +261,7 @@ Puedes implementar cuántas veces quieras el botón de pago en tu página web. P
             }
         };
         (function() {
-            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://payment.clipclap.co/js/paybutton.min.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
         })();
     </script>
@@ -321,7 +321,7 @@ Esta función se debe colocar en la variable global `_$clipclap` recibiendo los 
             */
         }
         (function() {
-            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://payment.clipclap.co/js/paybutton.min.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
         })();
     </script>
@@ -354,7 +354,7 @@ Para que puedas identificar los posibles fallos en el proceso de implementación
         _$clipclap._setKey = 'YOUR WEB KEY';
         _$clipclap._debugButton = true
         (function() {
-            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://clipclap.co/paybutton/js/paybutton.min.js';
+            var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://payment.clipclap.co/js/paybutton.min.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
         })();
     </script>
