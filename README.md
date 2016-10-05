@@ -319,7 +319,7 @@ Esta función se debe colocar en la variable global `_$clipclap` recibiendo los 
                     alert("Pago realizado exitosamente");
                 }
             */
-        }
+        };
         (function() {
             var cc = document.createElement('script'); cc.type = 'text/javascript'; cc.async = true;cc.src = 'https://payment.clipclap.co/js/paybutton.min.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cc, s);
