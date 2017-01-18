@@ -114,7 +114,7 @@ Ahora lo que necesitas es agregar los datos para construir el cobro. Supongamos 
 
   La lista de impuestos, taxId es la siguiente:
 
-    1 => IVA Regular del 16%
+    1 => IVA Regular del 19%
     2 => IVA Reducido del 5%
     3 => IVA Excento del 0%
     4 => IVA Excluído del 0%
