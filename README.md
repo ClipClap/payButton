@@ -5,19 +5,19 @@ ClipClap te permite incorporar la acción de pagar en tu página web de forma f�
 ### Prerrequisitos ###
 
  1. ***Tener una cuenta ClipClap Datáfono:***
-Si no tienes una cuenta en ClipClap Datáfono, puedes hacer el proceso de registro siguiendo este [link](https://clipclap.co/datafono/dashboard/php/views/login.php) o desde la misma aplicación ClipClap Datáfono.
+Si no tienes una cuenta en ClipClap Datáfono, puedes hacer el proceso de registro siguiendo este [link](https://datafono.clipclap.co/auth) o desde la misma aplicación ClipClap Datáfono.
 
  2. ***Tener el webKey de tu negocio:***
-Una vez tengas tu usuario Datáfono, tendrás que tener a la mano el “webKey” de tu negocio, puedes consultar los pasos para adquirirlos en detalle [aquí](https://clipclap.co/datafono/dashboard/php/views/settings.php).
+Una vez tengas tu usuario Datáfono, tendrás que tener a la mano el “webKey” de tu negocio, puedes consultar los pasos para adquirirlos en detalle [aquí](https://datafono.clipclap.co/developer).
 
  3. ***Guardar el nombre del dominio de tu página:***
-Debes Colocar el nombre del dominio de tu página para que te permitamos usar nuestro servicio. Si no lo haz hecho hazlo [aquí](https://clipclap.co/datafono/dashboard/php/views/settings.php).
+Debes Colocar el nombre del dominio de tu página para que te permitamos usar nuestro servicio. Si no lo haz hecho hazlo [aquí](https://datafono.clipclap.co/developer).
 
  4. ***ClipClap Billetera para tus clientes:***
 Para que tus usuarios puedan acceder al evento de pago de ClipClap deben tener instalada la aplicación Billetera, esta permitirá realizar los pagos de forma rápida y segura para tus clientes.
 
  5. ***Entorno de Prueba y Entorno de Producción:***
-Recuerda que puedes cambiar entre entorno de prueba y de producción, para llevar un mayor control de tu integración. puedes aprender cómo hacerlo en el siguiente [link](https://clipclap.co/datafono/dashboard/php/views/settings.php).
+Recuerda que puedes cambiar entre entorno de prueba y de producción, para llevar un mayor control de tu integración. puedes aprender cómo hacerlo en el siguiente [link](https://datafono.clipclap.co/developer).
 
  6. ***Formas de enviar información:***
 Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
@@ -275,7 +275,7 @@ Listo, ya tienes dos botones en la misma página para cobrar producto por produc
 Para ello, te enviaremos la información por dos caminos diferentes:
 
 ***1. El primer camino*** es una respuesta segura para que tu negocio actualice sus datos internamente, es decir, enviaremos un POST automático para indicarte el estado de la transacción realizada.
-Puedes indicarnos a cuál url enviaremos esta petición llenando el campo 'URL de Respuesta' en este [link](https://clipclap.co/datafono/dashboard/php/views/settings.php).
+Puedes indicarnos a cuál url enviaremos esta petición llenando el campo 'URL de Respuesta' en este [link](https://datafono.clipclap.co/developer).
 Los datos que enviaremos tendrán el siguiente formato:
 
 
@@ -299,9 +299,9 @@ Los datos que enviaremos tendrán el siguiente formato:
 ```
 
 
-***2. El segundo camino***, es la respuesta para que tu aplicación web pueda mostrarle al usuario el estado final de la transacción. Este camino depende del parámetro 'Modo redirect' que puedes modificar siguiendo el siguiente link [enlace](https://clipclap.co/datafono/dashboard/php/views/settings.php).
+***2. El segundo camino***, es la respuesta para que tu aplicación web pueda mostrarle al usuario el estado final de la transacción. Este camino depende del parámetro 'Modo redirect' que puedes modificar siguiendo el siguiente link [enlace](https://datafono.clipclap.co/developer).
 
-a. ***El 'Modo redirect' está activo (Si):*** Si este parámetro está activo, significa que el proceso se realizará desde nuestra página web, y al final del proceso nuestro sistema redireccionará a una url de tu dominio, que configures en el parámero 'url de Retorno' en el siguiente [link](https://clipclap.co/datafono/dashboard/php/views/settings.php).
+a. ***El 'Modo redirect' está activo (Si):*** Si este parámetro está activo, significa que el proceso se realizará desde nuestra página web, y al final del proceso nuestro sistema redireccionará a una url de tu dominio, que configures en el parámero 'url de Retorno' en el siguiente [link](https://datafono.clipclap.co/developer).
 
 b. ***El 'Modo redirect' no está activo (No):*** Si este parámetro no está activo, significa que el proceso se realizará en la página de tu negocio a través de un 'modal', y al final del proceso se ejecutará la función `transactionState`.
 
